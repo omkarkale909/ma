@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Management Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Money Management Dashboard</h1>
+        </header>
+
+        <!-- Income Section -->
+        <section id="income-section">
+            <div class="input-group">
+                <label for="income">Enter Total Income (credit from father):</label>
+                <input type="number" id="income" placeholder="Enter total income" />
+                <button id="addIncomeButton" class="action-button">Add Income</button>
+            </div>
+            <button id="resetIncomeButton" class="action-button" style="display: none;">Reset Income</button> <!-- Reset button -->
+        </section>
+
+        <!-- Expenses Section -->
+        <section id="expense-section">
+            <h2>Enter Expenses</h2>
+            <div class="input-group">
+                <label for="date">Date:</label>
+                <input type="date" id="expense-date" />
+            </div>
+            <div class="input-group">
+                <label for="tea">Tea:</label>
+                <input type="number" id="tea" placeholder="Tea" />
+            </div>
+            <div class="input-group">
+                <label for="nasta">Nasta:</label>
+                <input type="number" id="nasta" placeholder="Nasta" />
+            </div>
+            <div class="input-group">
+                <label for="snacks">Snacks:</label>
+                <input type="number" id="snacks" placeholder="Snacks" />
+            </div>
+            <div class="input-group">
+                <label for="travel">Travel:</label>
+                <input type="number" id="travel" placeholder="Travel" />
+            </div>
+            <div class="input-group">
+                <label for="entertainment">Entertainment:</label>
+                <input type="number" id="entertainment" placeholder="Entertainment" />
+            </div>
+            <div class="input-group">
+                <label for="utilities">Utilities:</label>
+                <input type="number" id="utilities" placeholder="Utilities" />
+            </div>
+            <button id="addExpenseButton" class="action-button">Add Expense</button>
+        </section>
+
+        <!-- Summary and Log -->
+        <section id="summary-section">
+            <h2>Total Income: <span id="total-income">0</span></h2>
+            <h2>Total Expenses: <span id="total-expenses">0</span></h2>
+            <h2>Remaining Balance: <span id="remaining-balance">0</span></h2>
+        </section>
+
+        <!-- Expense Log Section -->
+        <section id="expense-log-section">
+            <h2>Expense Log</h2>
+            <table id="expense-log">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Tea</th>
+                        <th>Nasta</th>
+                        <th>Snacks</th>
+                        <th>Travel</th>
+                        <th>Entertainment</th>
+                        <th>Utilities</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <!-- Pie Chart -->
+        <section id="pie-chart-section">
+            <h2>Expense Breakdown</h2>
+            <canvas id="expenseChart"></canvas>
+        </section>
+
+        <!-- History Section -->
+        <section id="history-section">
+            <h2>Expense History</h2>
+            <ul id="expense-history">
+                <!-- Daily expenses history will be listed here -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
